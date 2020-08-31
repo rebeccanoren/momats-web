@@ -1,7 +1,7 @@
 {
   "type": "Slice",
-  "fieldset": "TextSlice Template",
-  "description": "Template model for TextSlice",
+  "fieldset": "BookAppointment Template",
+  "description": "Template model for bookAppointment",
   "icon": "thumb_up",
   "display": "list",
   "non-repeat": {
@@ -10,7 +10,7 @@
       "config": {
         "single": "heading1",
         "label": "Title",
-        "placeholder": "Vanlig text"
+        "placeholder": "This is where it all begins..."
       }
     }
   }
