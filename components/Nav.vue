@@ -1,18 +1,12 @@
 <template>
   <nav class="site-header">
     <nuxt-link to="/">
-      <h1>{{ $prismic.asText(menu_title) }}</h1>
-      <h4>Momatz Fysio</h4>
+      <h4>{{ $prismic.asText(menu_title) }}</h4>
     </nuxt-link>
-    <ul class="menu">
+    <ul class="menu" style="list-style-type: none;">
       <li v-for="link in menu_links" v-bind:key="link.label">
         <prismic-link :field="link.link">{{ $prismic.asText(link.label) }}</prismic-link>
       </li>
-    </ul>
-    <ul style="list-style-type: none;">
-      <li>Tjänster</li>
-      <li>Om oss</li>
-      <li>Kontakt</li>
     </ul>
   </nav>
 </template>

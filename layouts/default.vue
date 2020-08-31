@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Nav :nav_title="config.menu_title" :nav_links="config.menu_links" />
+    <Nav :menu_title="config.menu_title" :menu_links="config.menu_links" />
     <Nuxt />
     <p>test</p>
   </div>
@@ -21,7 +21,6 @@ export default {
   async fetch() {
     const config = (await this.$prismic.api.getSingle("menu")).data;
     this.config = config;
-    console.log(config);
   },
 };
 import Footer from "~/components/Footer.vue";
