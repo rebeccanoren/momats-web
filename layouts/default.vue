@@ -2,6 +2,7 @@
   <div>
     <Nav :nav_title="config.menu_title" :nav_links="config.menu_links" />
     <Nuxt />
+    <p>test</p>
   </div>
 </template>
 
