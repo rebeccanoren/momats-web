@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">Momatz Fysio</footer>
+  <footer class="footer">Momats Fysio</footer>
 </template>
 
 <script>
