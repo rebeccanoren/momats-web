@@ -2,7 +2,7 @@
   <div>
     <Nav :menu_title="config.menu_title" :menu_links="config.menu_links" />
     <Nuxt />
-    <p>test</p>
+    <p>Momats</p>
   </div>
 </template>
 
