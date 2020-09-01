@@ -79,7 +79,7 @@ export default {
     [
       "@nuxtjs/prismic",
       {
-        endpoint: "https://momatz-web.cdn.prismic.io/api/v2",
+        endpoint: "https://momats-fysio.cdn.prismic.io/api/v2",
         apiOptions: {
           routes: [
             {
