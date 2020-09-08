@@ -1,4 +1,4 @@
-# momatz-web
+# momats-web
 
 ## Build Setup
 
