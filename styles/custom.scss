@@ -1,7 +1,5 @@
 .bookAppointment {
   padding: 20px;
-  margin: 100px;
-  margin: 30px;
 }
 
 @media (min-width: 1025px) {
@@ -10,4 +8,9 @@
     margin: 0 auto;
     padding: 50px;
   }
+}
+
+.ps-alternate__modules {
+  display: flex;
+  flex-wrap: wrap;
 }

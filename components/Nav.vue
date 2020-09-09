@@ -34,7 +34,7 @@ export default {
     display: flex
 
   li
-    margin-left: 10px
+    margin-left: 20px
 
   a
     color: #484d52
