@@ -1,11 +1,11 @@
 <template>
-  <section class="section">
+  <section class="bookAppointment">
     <prismic-rich-text v-if="slice.primary.title" :field="slice.primary.title" />
     <iframe
       src="https://demo.kaddio.com/iframe/booking"
       style="border: 0"
-      width="1000"
-      height="800"
+      width="100%"
+      height="800px"
       frameborder="0"
       scrolling="yes"
     ></iframe>

@@ -1,0 +1,11 @@
+.bookAppointment {
+  padding: 20px;
+}
+
+@media (min-width: 1025px) {
+  .bookAppointment {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px;
+  }
+}

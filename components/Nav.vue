@@ -4,7 +4,7 @@
       <h4>{{ $prismic.asText(menu_title) }}</h4>
     </nuxt-link>
     <ul class="menu" style="list-style-type: none;">
-      <li v-for="link in menu_links" v-bind:key="link.label">
+      <li v-for="link in menu_links" v-bind:key="link.id">
         <prismic-link :field="link.link">{{ $prismic.asText(link.label) }}</prismic-link>
       </li>
     </ul>

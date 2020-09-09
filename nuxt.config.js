@@ -53,7 +53,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["vue-essential-slices/src/styles/styles.scss", "styles/main.scss"],
+  css: [
+    "vue-essential-slices/src/styles/styles.scss",
+    "styles/main.scss",
+    "styles/custom.scss"
+  ],
 
   /*
    ** Plugins to load before mounting the App
