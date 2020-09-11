@@ -1,22 +1,76 @@
 <template>
-  <nav class="site-header">
-    <nuxt-link to="/">
-      <h4>{{ $prismic.asText(menu_title) }}</h4>
-    </nuxt-link>
-    <ul class="menu" style="list-style-type: none;">
-      <li v-for="link in menu_links" v-bind:key="link.id">
-        <prismic-link :field="link.link">{{ $prismic.asText(link.label) }}</prismic-link>
-      </li>
-    </ul>
-  </nav>
+  <div class="flex flex-wrap py-5">
+    <div class="w-full px-4">
+      <nav
+        class="relative flex flex-wrap items-center justify-between navbar-expand-lg bg-white"
+      >
+        <div
+          class="container px-4 mx-auto flex flex-wrap items-center justify-between"
+        >
+          <div
+            class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start"
+          >
+            <nuxt-link to="/">
+              <h4>{{ $prismic.asText(menu_title) }}</h4>
+            </nuxt-link>
+            <button
+              class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+              type="button"
+            >
+              <span class="block relative w-6 h-px rounded-sm bg-black"></span>
+              <span
+                class="block relative w-6 h-px rounded-sm bg-black mt-1"
+              ></span>
+              <span
+                class="block relative w-6 h-px rounded-sm bg-black mt-1"
+              ></span>
+            </button>
+          </div>
+          <div class="flex lg:flex-grow items-center">
+            <ul class="flex flex-col lg:flex-row list-none ml-auto">
+              <!-- <button
+                v-tippy="{
+                  placement: 'bottom',
+                  arrow: true,
+                  interactiveBorder: 50,
+                  interactive: 'true',
+                  duration: [500, 1000],
+                  allowHTML: true
+                }"
+              > -->
+              <!-- <div id="tip-content" style="display: none;">
+                  Tooltip content. Trigger event when clicking this
+                  <button class="btn btn-click">button</button>
+                </div>
+                <a href="/">Tjänster</a>
+              </button> -->
+              <li class="mr-3" v-for="link in nav_item" v-bind:key="link.id">
+                <prismic-link
+                  class="text-grey inline-block border border-white rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3"
+                  :field="link.primary.link"
+                  >{{ $prismic.asText(link.primary.label) }}</prismic-link
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
 </template>
 <script>
+import Vue from "vue";
+import VueTippy, { TippyComponent } from "vue-tippy";
+
+Vue.use(VueTippy);
+Vue.component("tippy", TippyComponent);
+
 export default {
   name: "Nav",
   props: {
-    menu_links: Array,
-    menu_title: Array,
-  },
+    nav_item: Array,
+    menu_title: Array
+  }
 };
 </script>
 
@@ -86,5 +140,3 @@ export default {
         margin-left: 10px
         margin-right: 10px
 </style>
-
-

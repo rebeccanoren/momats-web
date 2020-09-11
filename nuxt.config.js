@@ -56,7 +56,8 @@ export default {
   css: [
     "vue-essential-slices/src/styles/styles.scss",
     "styles/main.scss",
-    "styles/custom.scss"
+    "styles/custom.scss",
+    "styles/tailwind.css"
   ],
 
   /*
@@ -74,7 +75,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ["@nuxtjs/tailwindcss"],
 
   /*
    ** Nuxt.js modules

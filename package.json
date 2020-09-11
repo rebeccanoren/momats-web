@@ -13,12 +13,20 @@
     "@prismicio/vue": "^2.0.7",
     "nuxt": "^2.14.0",
     "nuxt-sm": "0.0.4",
+    "popper.js": "^1.16.1",
     "prismic-javascript": "^3.0.2",
+    "tippy.js": "^6.2.6",
+    "vue-clickaway": "^2.2.2",
     "vue-essential-slices": "^0.2.0",
-    "vue-slicezone": "0.0.26"
+    "vue-slicezone": "0.0.26",
+    "vue-tippy": "^4.7.0"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^3.0.2",
     "node-sass": "^4.14.1",
-    "sass-loader": "^10.0.1"
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.2.3",
+    "sass-loader": "^10.0.1",
+    "tailwindcss": "^1.8.6"
   }
 }
