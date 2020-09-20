@@ -1,17 +1,13 @@
 {
   "type": "Slice",
   "fieldset": "TextSlice Template",
-  "description": "Template model for TextSlice",
+  "description": "Template model for bookAppointment",
   "icon": "thumb_up",
   "display": "list",
   "non-repeat": {
     "title": {
       "type": "StructuredText",
-      "config": {
-        "single": "heading1",
-        "label": "Title",
-        "placeholder": "Vanlig text"
-      }
+      "config": {}
     }
   }
 }

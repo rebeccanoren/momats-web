@@ -2,12 +2,13 @@
   <div>
     <Nav :menu_title="config.menu_title" :nav_item="config.nav" />
     <Nuxt />
-    <p>Momats</p>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Nav from "~/components/Nav";
+import Footer from "~/components/Footer.vue";
 export default {
   name: "default",
   data: function() {
@@ -16,14 +17,14 @@ export default {
     };
   },
   components: {
-    Nav
+    Nav,
+    Footer
   },
   async fetch() {
     const config = (await this.$prismic.api.getSingle("menu")).data;
     this.config = config;
   }
 };
-import Footer from "~/components/Footer.vue";
 </script>
 
 <style>

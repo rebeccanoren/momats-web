@@ -4,9 +4,7 @@
       <nav
         class="relative flex flex-wrap items-center justify-between navbar-expand-lg bg-white"
       >
-        <div
-          class="container px-4 mx-auto flex flex-wrap items-center justify-between"
-        >
+        <div class="container px-4 mx-auto flex flex-wrap justify-between">
           <div
             class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start"
           >
@@ -28,22 +26,8 @@
           </div>
           <div class="flex lg:flex-grow items-center">
             <ul class="flex flex-col lg:flex-row list-none ml-auto">
-              <!-- <button
-                v-tippy="{
-                  placement: 'bottom',
-                  arrow: true,
-                  interactiveBorder: 50,
-                  interactive: 'true',
-                  duration: [500, 1000],
-                  allowHTML: true
-                }"
-              > -->
-              <!-- <div id="tip-content" style="display: none;">
-                  Tooltip content. Trigger event when clicking this
-                  <button class="btn btn-click">button</button>
-                </div>
-                <a href="/">Tjänster</a>
-              </button> -->
+              <DropdownMenu />
+
               <li class="mr-3" v-for="link in nav_item" v-bind:key="link.id">
                 <prismic-link
                   class="text-grey inline-block border border-white rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3"
@@ -61,6 +45,7 @@
 <script>
 import Vue from "vue";
 import VueTippy, { TippyComponent } from "vue-tippy";
+import DropdownMenu from "./DropdownMenu";
 
 Vue.use(VueTippy);
 Vue.component("tippy", TippyComponent);
@@ -70,6 +55,9 @@ export default {
   props: {
     nav_item: Array,
     menu_title: Array
+  },
+  components: {
+    DropdownMenu
   }
 };
 </script>

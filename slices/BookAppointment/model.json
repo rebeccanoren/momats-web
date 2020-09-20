@@ -7,11 +7,7 @@
   "non-repeat": {
     "title": {
       "type": "StructuredText",
-      "config": {
-        "single": "heading1",
-        "label": "Title",
-        "placeholder": "This is where it all begins..."
-      }
+      "config": {}
     }
   }
 }

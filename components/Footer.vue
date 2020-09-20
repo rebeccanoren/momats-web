@@ -1,10 +1,12 @@
 <template>
-  <footer class="footer">Momats Fysio</footer>
+  <footer class="footer">
+    <a href="info@momatsfysio.se">info@momatsfysio.se</a>
+  </footer>
 </template>
 
 <script>
 export default {
-  name: "Footer",
+  name: "Footer"
 };
 </script>
 

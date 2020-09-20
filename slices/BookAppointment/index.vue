@@ -1,6 +1,5 @@
 <template>
   <section class="bookAppointment">
-    <prismic-rich-text v-if="slice.primary.title" :field="slice.primary.title" />
     <iframe
       src="https://momatsfysio.kaddio.com/iframe/booking"
       style="border: 0"
@@ -23,8 +22,8 @@ export default {
             .join("/")
             .replace("cdn.", "")
         : null;
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>
@@ -39,4 +38,3 @@ a {
   color: #111;
 }
 </style>
-
