@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-wrap py-5">
+  <div class="flex flex-wrap py-5 bg-grey">
     <div class="w-full px-4">
       <nav
-        class="relative flex flex-wrap items-center justify-between navbar-expand-lg bg-white"
+        class="relative flex flex-wrap items-center justify-between navbar-expand-lg"
       >
         <div class="container px-4 mx-auto flex flex-wrap justify-between">
           <div
@@ -30,7 +30,7 @@
 
               <li class="mr-3" v-for="link in nav_item" v-bind:key="link.id">
                 <prismic-link
-                  class="text-grey inline-block border border-white rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3"
+                  class="text-grey inline-block rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3"
                   :field="link.primary.link"
                   >{{ $prismic.asText(link.primary.label) }}</prismic-link
                 >
@@ -63,6 +63,9 @@ export default {
 </script>
 
 <style lang="sass">
+.bg-grey
+    background-color: #FCFBFB
+
 .site-header
   max-width: 1200px
   margin: 0 auto

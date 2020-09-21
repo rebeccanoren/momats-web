@@ -2,7 +2,12 @@ module.exports = {
   prefix: "",
   important: false,
   separator: ":",
-  theme: {},
-  variants: {},
-  plugins: []
+  theme: {
+    fontFamily: {
+      display: ["Kumbh Sans", "sans-serif"],
+      body: ["Kumbh Sans", "sans-serif"]
+    },
+    variants: {},
+    plugins: []
+  }
 };

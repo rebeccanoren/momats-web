@@ -29,10 +29,10 @@ export default {
 
 <style>
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Kumbh Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
-  word-spacing: 1px;
+  word-spacing: 0.5px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -45,6 +45,16 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+h1 {
+  font-family: "Roboto sans", sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
 }
 
 .button--green {

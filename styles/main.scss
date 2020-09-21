@@ -1,8 +1,8 @@
 :root {
-  --primary-hue: 216;
+  --primary-hue: 225;
   --secondary-hue: 30;
-  --color--primary: hsl(var(--primary-hue), 97%, 50%);
-  --color--primary--dark: hsl(var(--primary-hue), 68%, 27%);
+  --color--primary: hsl(var(--primary-hue), 100%, 25%);
+  --color--primary--dark: hsl(var(--primary-hue), 100%, 15%);
   --color--primary--darker: hsl(var(--primary-hue), 75%, 21%);
   --color--secondary: hsl(var(--secondary-hue), 27%, 94%);
   --color-grey-0: hsl(0, 0%, 0%);
@@ -12,11 +12,10 @@
   --color-text-grey: var(--color-grey-53);
 
   /* default font family is the static Inter font */
-  --font-family: "Inter", Arial, sans-serif;
+  --font-family: "Kumbh Sans", sans-serif;
 
-  /* in supporting browsers, the variable Inter font is used */
   @supports (font-variation-settings: normal) {
-    --font-family: "Inter var", Arial, sans-serif;
+    --font-family: "Roboto", sans-serif;
   }
 
   --scrollbar: 0;
