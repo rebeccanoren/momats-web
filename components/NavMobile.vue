@@ -8,7 +8,7 @@
           <div
             class="w-full relative flex justify-between lg:w-auto px-1 lg:static lg:block lg:justify-start"
           >
-            <nuxt-link to="/">
+            <nuxt-link @click="showMenu = !showMenu" to="/">
               <h4>{{ $prismic.asText(menu_title) }}</h4>
             </nuxt-link>
             <button
