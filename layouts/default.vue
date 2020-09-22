@@ -1,6 +1,12 @@
 <template>
   <div>
-    <Nav :menu_title="config.menu_title" :nav_item="config.nav" />
+    <div class="hidden lg:block">
+      <Nav :menu_title="config.menu_title" :nav_item="config.nav" />
+    </div>
+
+    <div class="sm:block lg:hidden">
+      <NavMobile :menu_title="config.menu_title" :nav_item="config.nav" />
+    </div>
     <Nuxt />
     <Footer />
   </div>
@@ -8,8 +14,25 @@
 
 <script>
 import Nav from "~/components/Nav";
+import NavMobile from "~/components/NavMobile";
 import Footer from "~/components/Footer.vue";
+import NuxtSSRScreenSize from "nuxt-ssr-screen-size";
+
 export default {
+  data: () => {
+    return {
+      mobileView: false,
+      showNav: false
+    };
+  },
+  mixins: [NuxtSSRScreenSize.NuxtSSRScreenSizeMixin],
+  methods: {
+    handleView() {
+      this.mobileView = this.$vssWidth <= 900;
+      // console.log(this.$vssWidth);
+      // console.log(this.mobileView);
+    }
+  },
   name: "default",
   data: function() {
     return {
@@ -19,6 +42,9 @@ export default {
   components: {
     Nav,
     Footer
+  },
+  created() {
+    this.handleView();
   },
   async fetch() {
     const config = (await this.$prismic.api.getSingle("menu")).data;
@@ -30,7 +56,7 @@ export default {
 <style>
 html {
   font-family: "Kumbh Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
+    Roboto, "Helvetica Neuce", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 0.5px;
   -ms-text-size-adjust: 100%;

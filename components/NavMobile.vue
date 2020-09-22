@@ -6,12 +6,13 @@
       >
         <div class="container px-4 mx-auto flex flex-wrap justify-between">
           <div
-            class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
+            class="w-full relative flex justify-between lg:w-auto px-1 lg:static lg:block lg:justify-start"
           >
             <nuxt-link to="/">
               <h4>{{ $prismic.asText(menu_title) }}</h4>
             </nuxt-link>
             <button
+              @click="toggleMenu(true)"
               class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
             >
@@ -24,7 +25,48 @@
               ></span>
             </button>
           </div>
-          <div class="flex lg:flex-grow items-center">
+          <div
+            class="flex lg:flex-grow items-center mobile-menu"
+            :style="{ display: showMenu ? 'block' : 'none' }"
+          >
+            <div
+              @click="toggleMenu(false)"
+              class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none close-menu flex flex-row-reverse px-12 py-6"
+              type="button"
+            ></div>
+
+            <ul
+              class="flex flex-col lg:flex-row list-none ml-auto lg:invisible"
+            >
+              <!-- <DropdownMenu /> -->
+
+              <h1 class="px-3 mb-3">Våra tjänster</h1>
+              <li>
+                <nuxt-link
+                  class="text-grey inline-block rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3"
+                  to="/formthotics"
+                  >Formthotics</nuxt-link
+                >
+              </li>
+              <li>
+                <nuxt-link
+                  class="text-grey inline-block rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3 mb-5"
+                  to="/lopcoachning"
+                  >Löpcoachning</nuxt-link
+                >
+              </li>
+
+              <li class="mr-3" v-for="link in nav_item" v-bind:key="link.id">
+                <prismic-link
+                  class="text-grey inline-block rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3"
+                  :field="link.primary.link"
+                  >{{ $prismic.asText(link.primary.label) }}</prismic-link
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex lg:flex-grow items-center invisible lg:visible">
             <ul class="flex flex-col lg:flex-row list-none ml-auto">
               <DropdownMenu />
 
@@ -44,11 +86,6 @@
 </template>
 <script>
 import Vue from "vue";
-import VueTippy, { TippyComponent } from "vue-tippy";
-import DropdownMenu from "./DropdownMenu";
-
-Vue.use(VueTippy);
-Vue.component("tippy", TippyComponent);
 
 export default {
   name: "Nav",
@@ -56,8 +93,27 @@ export default {
     nav_item: Array,
     menu_title: Array
   },
-  components: {
-    DropdownMenu
+  data() {
+    return {
+      routeChange: false,
+      showMenu: false
+    };
+  },
+
+  watch: {
+    $route() {
+      this.routeChange = true;
+      this.showMenu = true;
+    }
+  },
+
+  methods: {
+    toggleMenu(payload) {
+      if (this.showMenu !== payload) this.routeChange = false;
+      if (!this.routeChange) {
+        this.showMenu = payload;
+      }
+    }
   }
 };
 </script>
@@ -105,8 +161,6 @@ export default {
       margin-left: 40px
       list-style-type: none
 
-
-
   .homepage .site-header
     position: absolute
     left: 0
@@ -123,4 +177,26 @@ export default {
         display: inline-block
         margin-left: 10px
         margin-right: 10px
+
+@media only screen and (max-width: 1024px)
+  .mobile-menu
+    width: 100%
+    height: 100vh
+    z-index: 1
+    position: fixed
+    top: 80px;
+    left: 0
+    background-color: #fcfbfb
+    padding: 0
+
+    h1
+      font-weight: 400
+      font-size: 22px;
+      color: grey;
+
+    ul
+      padding-top: 40px;
+      padding-left: 60px;
+    li
+      font-size: 32px;
 </style>
