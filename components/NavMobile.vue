@@ -12,7 +12,7 @@
               <h4>{{ $prismic.asText(menu_title) }}</h4>
             </nuxt-link>
             <button
-              @click="toggleMenu(true)"
+              @click="showMenu = !showMenu"
               class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
             >
@@ -29,26 +29,20 @@
             class="flex lg:flex-grow items-center mobile-menu"
             :style="{ display: showMenu ? 'block' : 'none' }"
           >
-            <div
-              @click="toggleMenu(false)"
-              class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none close-menu flex flex-row-reverse px-12 py-6"
-              type="button"
-            ></div>
-
             <ul
               class="flex flex-col lg:flex-row list-none ml-auto lg:invisible"
             >
               <!-- <DropdownMenu /> -->
 
               <h1 class="px-3 mb-3">Våra tjänster</h1>
-              <li>
+              <li @click="showMenu = !showMenu">
                 <nuxt-link
                   class="text-grey inline-block rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3"
                   to="/formthotics"
                   >Formthotics</nuxt-link
                 >
               </li>
-              <li>
+              <li @click="showMenu = !showMenu">
                 <nuxt-link
                   class="text-grey inline-block rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3 mb-5"
                   to="/lopcoachning"
@@ -56,7 +50,12 @@
                 >
               </li>
 
-              <li class="mr-3" v-for="link in nav_item" v-bind:key="link.id">
+              <li
+                @click="showMenu = !showMenu"
+                class="mr-3"
+                v-for="link in nav_item"
+                v-bind:key="link.id"
+              >
                 <prismic-link
                   class="text-grey inline-block rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3"
                   :field="link.primary.link"
@@ -107,14 +106,7 @@ export default {
     }
   },
 
-  methods: {
-    toggleMenu(payload) {
-      if (this.showMenu !== payload) this.routeChange = false;
-      if (!this.routeChange) {
-        this.showMenu = payload;
-      }
-    }
-  }
+  methods: {}
 };
 </script>
 
