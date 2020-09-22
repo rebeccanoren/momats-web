@@ -8,9 +8,11 @@
           <div
             class="w-full relative flex justify-between lg:w-auto px-1 lg:static lg:block lg:justify-start"
           >
-            <nuxt-link @click="showMenu = !showMenu" to="/">
-              <h4>{{ $prismic.asText(menu_title) }}</h4>
-            </nuxt-link>
+            <button @click="showMenu = false">
+              <nuxt-link to="/">
+                <h4>{{ $prismic.asText(menu_title) }}</h4>
+              </nuxt-link>
+            </button>
             <button
               @click="showMenu = !showMenu"
               class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
