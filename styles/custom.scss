@@ -24,10 +24,48 @@ a:hover {
   color: #000000;
 }
 
-.ps-alternate--grid {
+.ps-alternate--grid,
+.ps-cta {
   background-color: #fcfbfb;
 }
 
 .ps__kicker {
   font-weight: 700;
+}
+
+.card {
+  width: 40%;
+  padding: 20px;
+  // background-color: grey;
+  margin: 24px;
+
+  h2 {
+    margin-top: 32px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  a {
+    color: #17ca68;
+    font-size: 18px;
+  }
+
+  svg {
+    margin-left: 8px;
+    margin-top: 2px;
+    max-height: 20px;
+    max-width: 20px;
+    color: #06b957;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin: 20px 0;
+  }
 }

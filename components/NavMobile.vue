@@ -14,7 +14,7 @@
               </nuxt-link>
             </button>
             <button
-              @click="showMenu = !showMenu"
+              @click="menu()"
               class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
             >
@@ -37,14 +37,14 @@
               <!-- <DropdownMenu /> -->
 
               <h1 class="px-3 mb-3">Våra tjänster</h1>
-              <li @click="showMenu = !showMenu">
+              <li @click="menu()">
                 <nuxt-link
                   class="text-grey inline-block rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3"
                   to="/formthotics"
                   >Formthotics</nuxt-link
                 >
               </li>
-              <li @click="showMenu = !showMenu">
+              <li @click="menu()">
                 <nuxt-link
                   class="text-grey inline-block rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3 mb-5"
                   to="/lopcoachning"
@@ -53,7 +53,7 @@
               </li>
 
               <li
-                @click="showMenu = !showMenu"
+                @click="menu()"
                 class="mr-3"
                 v-for="link in nav_item"
                 v-bind:key="link.id"
@@ -108,7 +108,17 @@ export default {
     }
   },
 
-  methods: {}
+  methods: {
+    menu() {
+      if (this.showMenu) {
+        this.showMenu = false;
+        document.querySelector("body").style.overflow = "scroll";
+      } else {
+        this.showMenu = true;
+        document.querySelector("body").style.overflow = "hidden";
+      }
+    }
+  }
 };
 </script>
 
@@ -178,19 +188,20 @@ export default {
     height: 100vh
     z-index: 1
     position: fixed
-    top: 80px;
+    top: 40px;
     left: 0
     background-color: #fcfbfb
     padding: 0
 
     h1
       font-weight: 400
-      font-size: 22px;
+      font-size: 20px;
       color: grey;
 
     ul
-      padding-top: 40px;
+      padding-top: 80px;
       padding-left: 60px;
     li
-      font-size: 32px;
+      font-size: 28px;
+      margin: 8px 0 8px;
 </style>
