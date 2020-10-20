@@ -83,6 +83,12 @@ p {
   font-weight: 400;
 }
 
+li {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
 .button--green {
   display: inline-block;
   border-radius: 4px;
