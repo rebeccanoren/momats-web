@@ -46,7 +46,7 @@ a:hover {
   }
 
   a {
-    color: #17ca68;
+    color: var(--color--primary);
     font-size: 18px;
   }
 
@@ -55,7 +55,7 @@ a:hover {
     margin-top: 2px;
     max-height: 20px;
     max-width: 20px;
-    color: #06b957;
+    fill: var(--color--primary);
   }
 
   img {
