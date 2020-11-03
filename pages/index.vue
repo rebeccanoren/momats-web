@@ -19,7 +19,7 @@
             bra pris.
           </p>
 
-          <nuxt-link class="inline-block mt-5 mb-5 flex" to="/lopcoachning"
+          <nuxt-link class="inline-block mt-5 mb-5 flex" to="/formthotics"
             >Mer om Formthotics
             <svg>
               <path
