@@ -31,7 +31,7 @@
         :style="{ display: showDropdown ? 'block' : 'none' }"
       >
         <nuxt-link class="py-3 px-5" to="/formthotics">Formthotics</nuxt-link>
-        <nuxt-link class="py-3 px-5" to="/lopcoachning">Löpcoachning</nuxt-link>
+        <nuxt-link class="py-3 px-5" to="/lopcoachning">Löpträning</nuxt-link>
       </div>
     </div>
   </div>

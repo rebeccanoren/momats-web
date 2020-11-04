@@ -34,14 +34,14 @@
         </div>
         <div class="card">
           <img src="../assets/images/running.jpg" alt="" />
-          <h2>Löpcoachning</h2>
+          <h2>Löpträning</h2>
           <p>
-            Vi erbjuder individuell löpcoaching, löpträning i grupp och för
+            Vi erbjuder individuell löpträning, i grupp och för
             företag. Vi erbjuder löpcoachning, lär ut effektiv löpstegsteknik
             och hjälper dig att hitta glädje i din träning.
           </p>
           <nuxt-link class="inline-block mt-5 mb-5 flex" to="/lopcoachning"
-            >Mer om löpcoachning
+            >Mer om löpträning
             <svg>
               <path
                 d="M12.803 8.93l-4.314 3.892a.727.727 0 01-.954 0 .567.567 0
