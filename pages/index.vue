@@ -11,12 +11,9 @@
       <div class="md:flex justify-center">
         <div class="card">
           <img src="../assets/images/formthotics.jpg" alt="" />
-          <h2>Ortopediska inlägg</h2>
+          <h2>Formthotics fotinlägg</h2>
           <p>
-            Har du ont i knän, ryggen, höfter eller fötterna? En effektiv
-            lösning är Formthotics ortopediska inlägg från. Vi formgjuter inlägg
-            som passar dina fötter och din kropp. Du får ett bra stöd till ett
-            bra pris.
+            Formthotics fotinlägg kan användas både i förebyggande och behandlade syfte vid smärta i rygg, höft, knä, underben, fot och häl. Vi provar ut och anpassar fotinlägg för att de ska ge dina fötter bästa möjliga stöd i din vardag och vid olika aktiviteter.
           </p>
 
           <nuxt-link class="inline-block mt-5 mb-5 flex" to="/formthotics"
@@ -36,9 +33,7 @@
           <img src="../assets/images/running.jpg" alt="" />
           <h2>Löpträning</h2>
           <p>
-            Vi erbjuder individuell löpträning, i grupp och för
-            företag. Vi erbjuder löpcoachning, lär ut effektiv löpstegsteknik
-            och hjälper dig att hitta glädje i din träning.
+            Vi erbjuder löpträning individuellt, i par, i grupp samt för företag. Vår ambition är att lära ut en effektiv och hållbar löpteknik för att hjälpa dig att utvecklas, hitta glädje i och vilja fortsätta med din löpträning. Nivå och innehåll i löpträning kan anpassas efter önskemål och löpvana.
           </p>
           <nuxt-link class="inline-block mt-5 mb-5 flex" to="/lopcoachning"
             >Mer om löpträning
